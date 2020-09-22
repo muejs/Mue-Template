@@ -1,0 +1,528 @@
+@charset "utf-8";
+// 全局
+body {
+    font-family: $font-family-default;
+    font-size: $font-size-default;
+    color: $body-color;
+}
+
+.#{$namespace}router-item {
+    background: $body-bg-color;
+}
+
+//排版
+.container {
+    padding-left: $padding-left;
+    padding-right: $padding-right;
+}
+
+.container-xy {
+    padding: $padding-left;
+}
+
+.container-x {
+    padding-left: $padding-left;
+    padding-right: $padding-right;
+}
+
+.container-y {
+    padding-top: $padding-left;
+    padding-bottom: $padding-right;
+}
+
+.container-full {
+    margin-left: - $margin-base*2;
+    margin-right: - $margin-base*2;
+}
+
+// 默认按钮
+.#{$namespace}btn-default {
+    background: $btn-bg;
+    color: $color;
+}
+
+[class*=#{$namespace}btn] {
+    background-color: $body-bg-color;
+    border-color: $border-color;
+    color: $color;
+    &:active,
+    &.active {
+        background: darken($body-bg-color, 2);
+    }
+}
+
+.primary {
+    background-color: $primary-color;
+}
+
+.info {
+    background-color: $info-color;
+}
+
+.success {
+    background-color: $success-color;
+}
+
+.danger {
+    background-color: $danger-color;
+}
+
+.warning {
+    background-color: $warning-color;
+}
+
+.default {
+    background-color: $default-color;
+    color: #111;
+    &.reverse {
+        color: $color;
+    }
+}
+
+.#{$namespace}list>[class*=#{$namespace}btn] {
+    border-bottom-color: $border-color;
+}
+
+.#{$namespace}list>[class*=#{$namespace}btn-title] {
+    background: darken($body-bg-color, 2);
+}
+
+// 头部
+.header.#{$namespace}bar,
+.header .#{$namespace}bar,
+header.#{$namespace}bar,
+header .#{$namespace}bar {
+    background: $header-bg-color;
+}
+
+.#{$namespace}bar .#{$namespace}bar-left,
+.#{$namespace}bar .#{$namespace}bar-right {
+    height: $header-height;
+}
+
+// tab reverse相反的配色
+.#{$namespace}nav>[class*=#{$namespace}btn].active {
+    color: $main-color;
+    &:after {
+        background: $main-color;
+        width: $tab-nav-line-width;
+        left: 50%;
+        margin-left: -$tab-nav-line-width/2;
+    }
+}
+
+.#{$namespace}navbar,
+.#{$namespace}tab {
+    .#{$namespace}nav .active {
+        background: $body-bg-color;
+        color: $primary-color;
+        &:after {
+            background: $primary-color;
+            width: $tab-nav-line-width;
+            left: 50%;
+            margin-left: -$tab-nav-line-width/2;
+        }
+    }
+    &.reverse {
+        .#{$namespace}nav>[class*=#{$namespace}btn] {
+            background: $main-color;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .#{$namespace}nav .active {
+            background: $main-color;
+            color: $color;
+            &:after {
+                background: $color;
+                bottom: .15rem;
+            }
+        }
+    }
+}
+
+// 侧边栏
+.#{$namespace}tab-sidenav .active {
+    border-color: $main-color
+}
+
+// 顶部导航
+.#{$namespace}nav {
+    border-color: $border-color;
+    >[class*=#{$namespace}btn] {
+        padding-top: .28rem;
+        padding-bottom: .28rem;
+        .icon,
+        i {
+            max-width: .64rem;
+            height: .44rem;
+            line-height: .44rem;
+            font-size: .44rem;
+        }
+    }
+    >.active {
+        color: $main-color;
+    }
+}
+
+// 底部导航
+footer .#{$namespace}nav [class*=#{$namespace}btn].#{$namespace}box-vertical {
+    padding-top: .12rem;
+    padding-bottom: .12rem;
+}
+
+.#{$namespace}mask {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+//搜索栏
+.#{$namespace}searchbar {
+    padding-top: .14rem;
+    padding-bottom: .14rem;
+    background: $body-bg-color;
+    .btn-search {
+        color: #999;
+        &:active {
+            color: $main-color;
+        }
+    }
+    .#{$namespace}input {
+        background: #333;
+        input {
+            color: $color;
+        }
+        i {
+            color: #999;
+        }
+    }
+}
+
+// 弹出框 
+.#{$namespace}dialog {
+    border-radius: .08rem;
+    .#{$namespace}dialog-text {
+        color: $default-color;
+    }
+    .#{$namespace}dialog-foot {
+        border-top-color: $border-color;
+        [class*=#{$namespace}btn] {
+            border-left: 0;
+        }
+        .primary-reverse {
+            color: $danger-color;
+        }
+    }
+}
+
+// 自动消失提醒
+.#{$namespace}hint {
+    background: rgba(48, 48, 48, 0.9);
+}
+
+// 图文列表
+.item-title {
+    color: $default-color;
+}
+
+.#{$namespace}icon {
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    border-radius: 1rem;
+}
+
+.#{$namespace}list {
+    .#{$namespace}box .span1 {
+        color: $default-color;
+    }
+    >[class*=#{$namespace}btn] {
+        // border-color: $border-color;
+        .icon-listright {
+            color: $gray-color;
+        }
+    }
+}
+
+.#{$namespace}switch-text:after,
+.#{$namespace}switch-text:checked:after,
+.#{$namespace}switch:checked {
+    background-color: $main-color;
+}
+
+.#{$namespace}check :checked~label,
+input.#{$namespace}tag:checked,
+input.#{$namespace}check:checked {
+    border-color: $main-color;
+    background-color: rgba($main-color, 0.05);
+}
+
+.#{$namespace}dropdown-tab .#{$namespace}dropdown-content .#{$namespace}list .active {
+    color: $main-color;
+}
+
+.#{$namespace}choose.active:before,
+.#{$namespace}choose:checked:before,
+.#{$namespace}like.active:before,
+.#{$namespace}like:checked:before,
+.#{$namespace}fav.active:before,
+.#{$namespace}fav:checked:before,
+.#{$namespace}checkbox.active:before,
+.#{$namespace}checkbox:checked:before,
+.#{$namespace}radio.active:before,
+.#{$namespace}radio:checked:before {
+    color: $main-color;
+}
+
+// 日期控件
+.picker-item.picker-selected {
+    color: $main-color;
+}
+
+.picker-center-highlight {
+    border-color: $main-color;
+}
+
+.#{$namespace}accordion {
+    border-top-color: $border-color;
+}
+
+.#{$namespace}accordion>dt,
+.#{$namespace}accordion>[class*=#{$namespace}btn] {
+    background: $body-bg-color;
+    color: $color;
+    border-color: $border-color;
+    &:active,
+    &.active {
+        background: darken($body-bg-color, 2);
+        color: $color;
+        border-color: $border-color;
+    }
+}
+
+.#{$namespace}accordion>[class*=#{$namespace}btn]+dd,
+.#{$namespace}accordion>dt+dd,
+.#{$namespace}accordion>dd {
+    background: $body-bg-color;
+    border-color: $border-color;
+}
+
+.#{$namespace}tab-sidenav {
+    background: $body-bg-color;
+}
+
+.#{$namespace}tab-sidenav [class*=#{$namespace}btn] {
+    background: $body-bg-color;
+    border-color: $border-color;
+    &.active {
+        border-color: $main-color;
+    }
+}
+
+.#{$namespace}scroll {
+    background: $body-bg-color;
+}
+
+.#{$namespace}scroll .#{$namespace}scroll-foot {}
+
+.#{$namespace}panel {
+    background: none;
+    color: $color;
+}
+
+footer .#{$namespace}nav {
+    border-color: $border-color;
+}
+
+.#{$namespace}panel .#{$namespace}panel-head {
+    background: darken($body-bg-color, 2);
+    color: $color;
+    border-color: $border-color;
+}
+
+.#{$namespace}table th,
+.#{$namespace}table td {
+    background: none;
+    border-color: $border-color;
+}
+
+.#{$namespace}pic {
+    background: none;
+}
+
+.#{$namespace}listview>li>[class*=#{$namespace}btn] {
+    border-color: $border-color;
+}
+
+.#{$namespace}listview {
+    border-color: $border-color;
+}
+
+.#{$namespace}scroll .#{$namespace}scroll-main {
+    background: $body-bg-color;
+}
+
+.#{$namespace}slide-notice {
+    background: none;
+}
+
+.mue-floor-head {
+    background: darken($body-bg-color, 2);
+    border-color: $border-color;
+}
+
+input.mue-tag,
+input.mue-check {
+    background: none;
+    color: #ccc;
+    border-color: $border-color;
+}
+
+.mue-check :checked~label,
+input.mue-tag:checked,
+input.mue-check:checked {
+    color: $primary-color;
+    border-color: $border-color;
+}
+
+.mue-nav-icon,
+.mue-actionsheet {
+    background: $body-bg-color;
+}
+
+.mue-dialog {
+    background: darken($body-bg-color, 2);
+}
+
+.mue-dropdown-tab .mue-dropdown-content .mue-list .active {
+    background: $body-bg-color;
+}
+
+.mue-dropdown-tab .mue-dropdown-content .mue-tab-wrap,
+.mue-tab-wrap .mue-tab-main {
+    background: $body-bg-color;
+}
+
+.mue-dialog .mue-dialog-foot {
+    background: none;
+}
+
+.mue-article {
+    background: none;
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h6,
+    h5 {
+        color: $color;
+    }
+    section p {
+        color: $color;
+    }
+}
+
+.round[class*=mue-list]>[class*=mue-btn] {
+    border-color: $border-color;
+}
+
+.mue-table-card td,
+.mue-table-plain td {
+    color: $color;
+}
+
+.mue-table-card .mue-dropdown-page>.mue-btn,
+.mue-table-card.mue-panel .mue-panel-foot {
+    border-color: $border-color;
+}
+
+.mue-table-card {
+    border-color: $border-color;
+}
+
+.mue-table-odd tr:nth-child(odd) td,
+.mue-table-odd tr:nth-child(odd) th,
+.mue-table-odd tbody tr:nth-child(odd) td,
+.mue-table-odd tbody tr:nth-child(odd) th {
+    background: darken($body-bg-color, 2);
+}
+
+.mue-levelselect .select-value,
+.mue-levelselect .mue-dialog-head {
+    border-color: $border-color;
+}
+
+.mue-levelselect .select-value div {
+    border-color: $border-color;
+}
+
+.mue-levelselect .mue-tab-main>ul>li:nth-child(odd),
+.mue-levelselect .mue-tab-main>ul>li:nth-child(odd) .mue-list .mue-btn {
+    background: $body-bg-color;
+}
+
+.mue-levelselect .mue-tab-main>ul>li:nth-child(even),
+.mue-levelselect .mue-tab-main>ul>li:nth-child(even) .mue-list .mue-btn {
+    background: darken($body-bg-color, 2);
+}
+
+.mue-dropdown-tab .mue-dropdown-content {
+    background: darken($body-bg-color, 2);
+}
+
+.mue-input {
+    background: #333;
+    padding-left: .2rem;
+    border-radius: .1rem;
+}
+
+input.mue-input {
+    background: none;
+}
+
+.mue-input input[type="text"],
+.mue-input input[type="password"],
+.mue-input input[type="number"],
+.mue-input input[type="search"],
+.mue-input textarea {
+    color: $color;
+    padding-left: 0;
+}
+
+[class*=mue-btn].clearactive:active {
+    background-color: $body-bg-color;
+}
+
+.mue-switch-text,
+.mue-switch {
+    border-color: $border-color;
+    background: #666;
+}
+
+.mue-switch-text:after,
+.mue-switch:after {
+    background: #ccc;
+}
+
+.mue-stepbar {
+    background-color: $body-bg-color;
+}
+
+.mue-list .mue-label {
+    color: gray;
+}
+
+.mue-list .mue-value {
+    color: $color;
+}
+
+.mue-stepbar-line.mue-stepbar-center .mue-stepbar-cell {
+    border-color: #111;
+}
+
+.mue-stepbar-line .mue-stepbar-dot {
+    background: #111;
+}
+
+.mue-check label {
+    background: $body-bg-color;
+    border-color: $border-color;
+}

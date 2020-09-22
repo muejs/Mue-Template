@@ -1,0 +1,44 @@
+<div class="mue-page register-page mue-box-vertical">
+    <header>
+        <div class="mue-bar">
+            <div class="mue-bar-left">
+                <div class="mue-btn" onclick="mue.back();"><i class="icon-back"></i></div>
+            </div>
+            <div class="mue-bar-main">注册</div>
+            <div class="mue-bar-right">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="section-title">请填写信息</div>
+        <ul class="mue-list">
+            <li class="mue-btn mue-box clearactive">
+                <label class="mue-label" for="phonenumber">手机号:</label>
+                <div class="span1">
+                    <div class="mue-input user-input">
+                        <input id="phonenumber" type="number" value="" placeholder="请输入手机号">
+                    </div>
+                </div>
+            </li>
+            <li class="mue-btn mue-box clearactive">
+                <label class="mue-label" for="password">密码:</label>
+                <div class="span1">
+                    <div id="passwordInput" class="mue-input">
+                        <input id="password" type="password" placeholder="请输入密码">
+                    </div>
+                </div>
+            </li>
+            <li class="mue-btn mue-box clearactive">
+                <label class="mue-label">验证码:</label>
+                <div class="span1">
+                    <input type="text" class="mue-input" value="" placeholder="请输入验证码" maxlength="4">
+                </div>
+                <div class="mue-btn primary-reverse mini ring" id="btnSend">发送验证码</div>
+            </li>
+        </ul>
+        <div class="container-xy">
+            <div class="mue-btn round primary" href="pages/msg/msg.html">注册</div>
+        </div>
+    </main>
+
+</div>

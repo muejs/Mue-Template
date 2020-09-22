@@ -1,0 +1,51 @@
+﻿<div class="mue-page mue-box-vertical">
+    <header>
+        <div class="mue-bar">
+            <div class="mue-bar-left">
+                <!-- <div class="mue-btn" onclick="mue.back();"><i class="icon-back"></i></div> -->
+            </div>
+            <div class="mue-bar-main">
+                TAB局部登录-后退局部刷新
+            </div>
+            <div class="mue-bar-right">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="uiTab" class="mue-tab mue-box-vertical">
+            <div class="mue-tab-main">
+                <ul>
+                    <!-- 内容必须在li里面 -->
+                    <li>
+                        <component id="tab0" name="pages/components/list/index" type="home"></component>
+                    </li>
+                    <li style="display: none;">
+                        <component id="tab1" name="pages/components/list/index" type="order" delay="true"></component>
+                    </li>
+                    <li style="display: none;">
+                        <component id="tab2" name="pages/components/list/index" type="message" delay="true"></component>
+                    </li>
+                    <li style="display: none;">
+                        <component id="tab3" name="pages/personal/index" delay="true"></component>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <ul id="uiTabNav" class="mue-nav">
+            <li class="mue-btn mue-box-vertical active"><i class="icon-home"><span class="mue-badges">5</span></i>
+                <div class="span1">首页</div>
+            </li>
+            <li class="mue-btn mue-box-vertical"><i class="icon-edit"></i>
+                <div class="span1">订单</div>
+            </li>
+            <li class="mue-btn mue-box-vertical"><i class="icon-chat"><span class="mue-badges"></span></i>
+                <div class="span1">消息</div>
+            </li>
+            <li class="mue-btn mue-box-vertical"><i class="icon-setting"></i>
+                <div class="span1">我的</div>
+            </li>
+        </ul>
+    </footer>
+</div>

@@ -1,0 +1,231 @@
+<style>
+    .page-form .mue-fluid-space-3 .span1 {
+        margin-bottom: .2rem;
+    }
+    
+    .page-form .mue-pickerdate {
+        text-align: right;
+        padding-right: .2rem;
+    }
+    
+    .selected-val {
+        margin-right: .1rem;
+    }
+</style>
+<div class="mue-page page-form mue-box-vertical">
+    <header>
+        <div class="mue-bar">
+            <div class="mue-bar-left">
+                <div class="mue-btn" onclick="mue.back();"><i class="icon-back"></i></div>
+            </div>
+            <div class="mue-bar-main">表单</div>
+            <div class="mue-bar-right">
+            </div>
+        </div>
+    </header>
+    <main>
+        <h3 class="section-title">表单展示</h3>
+        <div class="mue-list">
+            <label class="mue-btn mue-box">
+        <div class="mue-label">身份证号码</div>
+        <div class="span1">
+          <div class="mue-value" b-text="page.view.id"></div>
+        </div>
+      </label>
+            <label class="mue-btn mue-box">
+        <div class="mue-label">姓名</div>
+        <div class="span1">
+          <div class="mue-value" b-text="page.view.name">王小o</div>
+        </div>
+      </label>
+            <label class="mue-btn mue-box">
+        <div class="mue-label">手机号码</div>
+        <div class="span1">
+          <div class="mue-value" b-text="page.view.phone">13800138000</div>
+        </div>
+      </label>
+            <label class="mue-btn mue-box">
+        <div class="mue-label">邮箱</div>
+        <div class="span1">
+          <div class="mue-value" b-text="page.view.mail">XXX@qq.com</div>
+        </div>
+      </label>
+            <label class="mue-btn mue-box">
+        <div class="mue-label">公司</div>
+        <div class="span1">
+          <div class="mue-value" b-text="page.view.company">广州xxx公司</div>
+        </div>
+      </label>
+        </div>
+        <h3 class="section-title">表单填写</h3>
+        <ul class="mue-list">
+            <li class="mue-btn mue-box clearactive">
+                <label class="mue-label" for="phonenumber">手机号:</label>
+                <div class="span1">
+                    <div class="mue-input user-input">
+                        <input id="phonenumber" type="number" b-model="page.login.phone" value="" placeholder="请输入手机号"> </div>
+                </div>
+            </li>
+            <li class="mue-btn mue-box clearactive">
+                <label class="mue-label" for="password">密码:</label>
+                <div class="span1">
+                    <div id="passwordInput" class="mue-input">
+                        <input id="password" type="password" b-model="page.login.password" placeholder="请输入密码"> </div>
+                </div>
+            </li>
+            <li class="mue-btn mue-box clearactive">
+                <label class="mue-label">验证码:</label>
+                <div class="span1">
+                    <input type="text" class="mue-input" value="" b-model="page.login.code" placeholder="请输入验证码" maxlength="4"> </div>
+                <div class="mue-btn primary-reverse mini ring" id="btnSend">发送验证码</div>
+            </li>
+        </ul>
+        <h3 class="section-title">评论</h3>
+        <ul class="mue-list">
+            <li class="mue-btn clearactive">
+                <div id="commentContent" class="mue-input">
+                    <textarea class="mue-input" id="" cols="30" rows="4" b-model="page.form.comment" placeholder="请输入内容"></textarea>
+                </div>
+            </li>
+        </ul>
+        <h3 class="section-title">表单选择</h3>
+        <ul class="mue-list">
+            <li class="mue-btn mue-box">
+                <label class="mue-label">滑动值:</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="range" class="mue-range" b-model="page.form.range" min="0" max="255" value="200"> </div>
+            </li>
+            <li class="mue-btn mue-box">
+                <label class="mue-label">切换</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="checkbox" class="mue-switch-text" value="ON" uncheck-value="OFF" check-value="ON" uncheck="OFF" check="ON" b-model="page.form.toggle"> </div>
+            </li>
+            <li class="mue-btn mue-box">
+                <label class="mue-label">开启蓝牙</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="checkbox" name="bluetooth" class="mue-switch" value="bluetooth" b-model="page.form.bluetooth"> </div>
+            </li>
+            <li class="mue-btn mue-box">
+                <label class="mue-label">收藏</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="checkbox" name="fav" class="mue-like warning" value="fav" b-model="page.form.fav"> </div>
+            </li>
+        </ul>
+        <h3 class="section-title">独立控件</h3>
+        <ul class="mue-list">
+            <li class="mue-btn mue-box clearactive">
+                <label class="mue-label">选择数量:</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <div id="uiNumber" class="mue-number"></div>
+                </div>
+            </li>
+            <li class="mue-btn mue-box clearactive">
+                <label class="mue-label">物流速度:</label>
+                <div class="span1"> </div>
+                <div class="mue-value">
+                    <div id="uiRating" class="mue-rating"></div>
+                </div>
+            </li>
+            <li class="mue-btn mue-box">
+                <label class="mue-label">区域多选</label>
+                <div class="span1"> </div>
+                <div id="select" class="mue-select">请选择 </div> <i class="icon-listright"></i> </li>
+            <li id="chooseCity" class="mue-btn mue-box clearactive">
+                <label class="mue-label">城市选择</label>
+                <div class="span1"> </div>
+                <div>
+                    <div class="mue-box" b-click="page.showCity()">
+                        <div class="selected-val"></div>
+                        <div class="selected-val"></div>
+                        <div class="selected-val"></div>
+                    </div>
+                </div> <i class="icon-listright"></i> </li>
+            <li class="mue-btn mue-box clearactive">
+                <label class="mue-label">出生日期</label>
+                <div class="span1"> </div>
+                <div class="mue-value">
+                    <input type="text" id="pickerdateInput" readonly class="mue-pickerdate">
+                </div>
+                <i class="icon-listright"></i> </li>
+        </ul>
+        <h3 class="section-title">多选列表 -- 您的兴趣是: <span b-text="page.form.interest"></span></h3>
+        <ul id="selectList2" class="mue-list">
+            <li class="mue-btn mue-box">
+                <label class="mue-label">羽毛球</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="checkbox" class="mue-choose" name="interest" text="羽毛球" value="yumaoqiu"> </div>
+            </li>
+            <li class="mue-btn mue-box">
+                <label class="mue-label">足球</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="checkbox" class="mue-choose" name="interest" text="足球" value="zuqiu"> </div>
+            </li>
+        </ul>
+        <h3 class="section-title">单选列表-样式1 -- 您的性别是: <span b-text="page.form.sex"></span></h3>
+        <ul id="selectList4" class="mue-list">
+            <li class="mue-btn mue-box">
+                <label class="mue-label">男</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="radio" class="mue-radio" name="sex2" value="man" text="男"> </div>
+            </li>
+            <li class="mue-btn mue-box">
+                <label class="mue-label">女</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="radio" class="mue-radio" name="sex2" value="woman" text="女"> </div>
+            </li>
+        </ul>
+        <h3 class="section-title">单选列表-样式2 -- 您的性别是: <span b-text="page.form.sex2"></span></h3>
+        <ul id="selectList3" class="mue-list">
+            <li class="mue-btn mue-box">
+                <label class="mue-label">男</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="radio" class="mue-choose" name="sex" value="man" text="男"> </div>
+            </li>
+            <li class="mue-btn mue-box">
+                <label class="mue-label">女</label>
+                <div class="span1"></div>
+                <div class="mue-value">
+                    <input type="radio" class="mue-choose" name="sex" value="woman" text="女"> </div>
+            </li>
+        </ul>
+        <div class="section-title">自定义单选</div>
+        <div class="mue-fluid-space-3">
+            <div class="span1">
+                <input type="radio" class="mue-check" b-model="page.form.custom" name="chongzhi1" value="50" uncheck="50元" check="50元"> </div>
+            <div class="span1">
+                <input type="radio" class="mue-check" b-model="page.form.custom" name="chongzhi1" value="100" uncheck="100元" check="100元"> </div>
+            <div class="span1">
+                <input type="radio" class="mue-check" b-model="page.form.custom" name="chongzhi1" value="200" uncheck="200元" check="200元"> </div>
+            <div class="span1">
+                <input type="radio" class="mue-check" b-model="page.form.custom" name="chongzhi1" value="300" uncheck="300元" check="300元"> </div>
+            <div class="span1">
+                <input type="radio" class="mue-check" b-model="page.form.custom" name="chongzhi1" value="500" uncheck="50元" check="50元"> </div>
+        </div>
+        <div class="section-title"> 拍照上传: </div>
+        <div id="facePhoto" class="mue-upload mue-fluid-space-4">
+            <div class="span1">
+                <div class="mue-btn"> <i class="icon-plus large"></i> </div>
+            </div>
+        </div>
+        <div class="container-y">
+            <div class="mue-box-space">
+                <div class="span1">
+                    <div class="mue-btn round">次按钮</div>
+                </div>
+                <div class="span1">
+                    <div class="mue-btn round primary" b-click="page.submit">提交</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

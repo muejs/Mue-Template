@@ -1,0 +1,48 @@
+﻿<div class="mue-page mue-box-vertical">
+    <header>
+        <div class="mue-bar">
+            <div class="mue-bar-left">
+                <div class="mue-btn" onclick="mue.back();"><i class="icon-back"></i></div>
+            </div>
+            <div class="mue-bar-main">
+                全局登录
+            </div>
+            <div class="mue-bar-right">
+                <div class="mue-btn" href="pages/personal/index.html"><i class="icon-user"></i></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="uiTab" class="mue-tab mue-box-vertical">
+            <div class="mue-tab-head">
+                <!-- 滚动导航布局 -->
+                <!-- <div class="mue-navbar"> -->
+                <ul class="mue-nav">
+                    <!-- <li>之间不能有空隙 -->
+                    <li class="mue-btn active">新闻</li>
+                    <li class="mue-btn">娱乐</li>
+                    <li class="mue-btn">体育</li>
+                    <li class="mue-btn">图片</li>
+                </ul>
+                <!-- </div> -->
+            </div>
+            <div class="mue-tab-main">
+                <ul>
+                    <!-- 内容必须在li里面 -->
+                    <li>
+                        <component id="tab0" name="pages/components/list/index" type="home"></component>
+                    </li>
+                    <li style="display: none;">
+                        <component id="tab1" name="pages/components/list/index" type="ent" delay="true"></component>
+                    </li>
+                    <li style="display: none;">
+                        <component id="tab2" name="pages/components/list/index" type="sport" delay="true"></component>
+                    </li>
+                    <li style="display: none;">
+                        <component id="tab3" name="pages/components/list/index" type="photo" delay="true"></component>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
